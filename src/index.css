@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+a.active hr {
+    display: block;
+}
+
+* {
+    font-family: Outfit;
+}
+
+.prata-regular {
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media (max-width: 768px) {
+    .res:active {
+        background-color: gray;
+        color: #fff;
+        border-radius: 7px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media(max-width:640px) {
+    a.active {
+        background-color: rgb(0, 0, 0, 0.5);
+        color: white;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Text Selection Styling */
+*::selection {
+    background-color: #5a6268;
+    /* Sleek gray for text selection */
+    color: #fff;
+    /* White text color for better contrast */
+}
+
+/* Custom Select Dropdown */
+select {
+    background-color: #fff;
+    /* Dark background */
+    color: #000;
+    /* White text */
+    border: 1px solid #6c757d;
+    /* Gray border */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 10px;
+    font-size: 14px;
+    appearance: none;
+    /* Remove default arrow */
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    /* Remove focus outline */
+    border-color: #5a6268;
+    /* Darker gray border on focus */
+}
+
+/* Custom Select Option */
+option {
+    background-color: #fff;
+    /* Dark background for options */
+    color: #000;
+    /* White text for readability */
+    padding: 5px;
+}
+
+option::selection {
+    background-color: #6c757d;
+}
+
+/* Custom Checkbox Styling */
+input[type="checkbox"] {
+    appearance: none;
+    /* Remove default checkbox styling */
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    /* Dark background */
+    border: 2px solid #6c757d;
+    /* Gray border */
+    border-radius: 4px;
+    /* Slightly rounded corners */
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #6c757d;
+    /* Change background when checked */
+    border-color: #5a6268;
+    /* Darker border when checked */
+}
+
+input[type="checkbox"]:checked::before {
+    content: '✔';
+    /* Checkmark icon */
+    display: block;
+    color: #fff;
+    /* White checkmark */
+    text-align: center;
+    font-size: 12px;
+}

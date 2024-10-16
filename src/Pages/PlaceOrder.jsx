@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import Title from '../Components/Title';
 import CartTotal from '../Components/CartTotal';
-import { assets } from '../assets/frontend_assets/assets';
+import { assets } from '../assets/assets';
 import { ShopContext } from '../Context/ShopContext';
+import { toast } from 'react-toastify';
 
 const PlaceOrder = () => {
     const [method, setMethod] = useState('cod')
@@ -16,33 +17,33 @@ const PlaceOrder = () => {
                 </div>
 
                 <div className="flex gap-3">
-                    <input type="text" placeholder='Firstname'
+                    <input required type="text" placeholder='Firstname'
                         className='border border-gray-300 rounded py-1.5 px-3.5 w-full' />
-                    <input type="text" placeholder='Lastname'
+                    <input required type="text" placeholder='Lastname'
                         className='border border-gray-300 rounded py-1.5 px-3.5 w-full' />
                 </div>
 
-                <input type="email" placeholder='Email'
+                <input required type="email" placeholder='Email'
                     className='border border-gray-300 rounded py-1.5 px-3.5 w-full' />
 
-                <input type="email" placeholder='Street'
+                <input required type="email" placeholder='Street'
                     className='border border-gray-300 rounded py-1.5 px-3.5 w-full' />
 
                 <div className="flex gap-3">
-                    <input type="text" placeholder='City'
+                    <input required type="text" placeholder='City'
                         className='border border-gray-300 rounded py-1.5 px-3.5 w-full' />
-                    <input type="text" placeholder='State'
+                    <input required type="text" placeholder='State'
                         className='border border-gray-300 rounded py-1.5 px-3.5 w-full' />
                 </div>
 
                 <div className="flex gap-3">
-                    <input type="number" placeholder='Zipcode'
+                    <input required type="number" placeholder='Zipcode'
                         className='border border-gray-300 rounded py-1.5 px-3.5 w-full' />
-                    <input type="text" placeholder='Country'
+                    <input required type="text" placeholder='Country'
                         className='border border-gray-300 rounded py-1.5 px-3.5 w-full' />
                 </div>
 
-                <input type="number" placeholder='Phone'
+                <input required type="number" placeholder='Phone'
                     className='border border-gray-300 rounded py-1.5 px-3.5 w-full' />
             </div>
             <div className="mt-8">
@@ -73,7 +74,7 @@ const PlaceOrder = () => {
                     </div>
                 </div>
                 <div className="w-full text-end mt-8">
-                    <button onClick={() => navigate('/order')}
+                    <button onClick={() => navigate('/order')} type='submit'
                         className="bg-black text-white px-16 py-3 text-sm">PLACE ORDER</button>
                 </div>
             </div>

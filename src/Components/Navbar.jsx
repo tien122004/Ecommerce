@@ -1,13 +1,22 @@
 import { useContext, useState } from 'react'
-import { assets } from '../assets/frontend_assets/assets'
-import { NavLink, Link } from 'react-router-dom'
+import { assets } from '../assets/assets'
+import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { ShopContext } from '../Context/ShopContext'
 
 
 const Navbar = () => {
-
     const [visible, setVisible] = useState(false)
     const { setShowSearch, getCartCount } = useContext(ShopContext)
+    const navigate = useNavigate()
+    const logged = JSON.parse(localStorage.getItem('login'))
+
+    const handlCheckLogin = () => {
+        if (logged) {
+            navigate('/user-info')
+        } else {
+            navigate('/login')
+        }
+    }
 
     return (
 
@@ -46,9 +55,8 @@ const Navbar = () => {
                             onClick={() => setShowSearch(true)} />
                     </Link>
                     <div className=' group relative'>
-                        <Link to={'/login'}>
-                            <img src={assets.profile_icon} className='w-5 cursor-pointer' alt="" />
-                        </Link>
+                        <img src={assets.profile_icon} className='w-5 cursor-pointer' alt=""
+                            onClick={handlCheckLogin} />
                         {/* <div className=' group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
 
                             <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded'>

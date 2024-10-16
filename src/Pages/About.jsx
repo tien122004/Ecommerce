@@ -1,6 +1,6 @@
 import React from 'react';
 import Title from '../Components/Title'
-import { assets } from '../assets/frontend_assets/assets';
+import { assets } from '../assets/assets';
 import NewsBox from '../Components/NewsBox';
 
 const About = () => {

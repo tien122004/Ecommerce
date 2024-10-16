@@ -11,8 +11,10 @@ import Navbar from "./Components/Navbar.jsx"
 import Login from './Pages/Login.jsx'
 import Footer from './Components/Footer.jsx'
 import SearchBar from './Components/SearchBar.jsx'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UserInfo from './Pages/UserInfo.jsx'
+import EditInfo from './Pages/EditInfo.jsx'
 
 const App = () => {
   return (
@@ -22,6 +24,7 @@ const App = () => {
       <SearchBar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/collection' element={<Collection />} />
         <Route path='/login' element={<Login />} />
@@ -30,6 +33,8 @@ const App = () => {
         <Route path='/cart' element={<Cart />} />
         <Route path='/product/:productId' element={<Product />} />
         <Route path='/place-order' element={<PlaceOrder />} />
+        <Route path='/user-info' element={<UserInfo />} />
+        <Route path='/edit-info' element={<EditInfo />} />
       </Routes>
 
       <Footer />

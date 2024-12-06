@@ -24,9 +24,15 @@ const Collection = () => {
     // Toggle category checkboxes - add or remove categories from state
     const toggleCategory = (e) => {
         if (category.includes(e.target.value)) {
-            setCategory(prev => prev.filter(item => item !== e.target.value));
+            setCategory(prev => {
+                console.log('prev top ' + prev)
+                return prev.filter(item => item !== e.target.value)
+            });
         } else {
-            setCategory(prev => [...prev, e.target.value]);
+            setCategory(prev => {
+                console.log('prev ' + prev)
+                return [...prev, e.target.value]
+            });
         }
     };
 
